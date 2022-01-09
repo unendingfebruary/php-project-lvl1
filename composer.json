@@ -3,11 +3,13 @@
     "description": "hexlet project lvl1",
     "license": "MIT",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Even.php"
         ]
     },
     "require": {
