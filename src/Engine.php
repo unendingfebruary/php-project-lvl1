@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Even;
+namespace Brain\Games\Engine;
 
 use function Brain\Games\Cli\getUserName;
 use function cli\line;
@@ -8,16 +8,15 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function playEvenGame()
+function runGame(string $description, callable $getTaskAndAnswer)
 {
     $userName = getUserName();
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    line($description);
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $randomNumber = rand(0, 100);
-        $expectedAnswer = $randomNumber % 2 === 0 ? 'yes' : 'no';
+        [$task, $expectedAnswer] = $getTaskAndAnswer();
 
-        line("Question: %s", $randomNumber);
+        line("Question: %s", $task);
         $userAnswer = prompt('Your answer');
 
         if ($userAnswer === $expectedAnswer) {
