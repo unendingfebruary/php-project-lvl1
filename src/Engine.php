@@ -2,7 +2,6 @@
 
 namespace Brain\Games\Engine;
 
-use function Brain\Games\Cli\getUserName;
 use function cli\line;
 use function cli\prompt;
 
@@ -10,7 +9,9 @@ const ROUNDS_COUNT = 3;
 
 function runGame(string $description, callable $getTaskAndAnswer)
 {
-    $userName = getUserName();
+    line('Welcome to the Brain Game!');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
     line($description);
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
