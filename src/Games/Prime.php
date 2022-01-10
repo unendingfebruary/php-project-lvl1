@@ -26,6 +26,7 @@ function getTaskAndAnswer(): \Closure
     return function () {
         $number = rand(0, 100);
 
+        $result = [];
         $result[] = "{$number}";
         $result[] = isPrime($number) ? 'yes' : 'no';
 

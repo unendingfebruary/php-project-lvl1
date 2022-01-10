@@ -33,6 +33,7 @@ function getTaskAndAnswer(): \Closure
         $progressionItem = $progression[$randomNumber];
         $progression[$randomNumber] = '..';
 
+        $result = [];
         $result[] = implode(' ', $progression);
         $result[] = (string) $progressionItem;
 

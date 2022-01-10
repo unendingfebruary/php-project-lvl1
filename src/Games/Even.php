@@ -15,6 +15,8 @@ function getTaskAndAnswer(): \Closure
 {
     return function () {
         $randomNumber = rand(0, 100);
+
+        $result = [];
         $result[] = $randomNumber;
         $result[] = $randomNumber % 2 === 0 ? 'yes' : 'no';
 

@@ -29,6 +29,7 @@ function getTaskAndAnswer(): \Closure
         $firstNumber = rand(0, 50);
         $secondNumber = rand(0, 50);
 
+        $result = [];
         $result[] = "{$firstNumber} {$secondNumber}";
         $result[] = (string) getGcdOfNumbers($firstNumber, $secondNumber);
 

@@ -33,6 +33,7 @@ function getTaskAndAnswer(): \Closure
         $secondNumber = rand(0, 25);
         $operation = MATH_OPERATIONS[rand(0, count(MATH_OPERATIONS) - 1)];
 
+        $result = [];
         $result[] = "{$firstNumber} {$operation} {$secondNumber}";
         $result[] = (string) getOperationResult($firstNumber, $secondNumber, $operation);
 
